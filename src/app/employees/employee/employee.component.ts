@@ -19,7 +19,6 @@ export class EmployeeComponent implements OnInit {
   onClear(){
     this.service.form.reset();
     this.service.initializeFormGroup();
-    this.notificationService.success('::Submitted successfully!');
   }
 
   onSubmit(){
