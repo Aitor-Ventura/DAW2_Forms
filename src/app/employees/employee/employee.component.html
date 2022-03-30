@@ -1,3 +1,8 @@
+<mat-toolbar>
+  <span>{{ service.form.controls['$key'].value?"Modify Employee":"New Employee" }}</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
 <form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
   <mat-grid-list cols="2" rowHeight="300px">
     <mat-grid-tile>
@@ -32,7 +37,6 @@
         </div>
         <mat-form-field>
           <mat-select formControlName="department" placeholder="Department">
-            <mat-option>None</mat-option>
             <ng-container *ngFor="let department of departmentService.array">
               <mat-option value="{{ department.$key }}">{{ department.code }} - {{ department.name }}</mat-option>
             </ng-container>
@@ -40,6 +44,7 @@
         </mat-form-field>
         <mat-form-field>
           <input formControlName="hireDate" matInput [matDatepicker]="picker" placeholder="Hire Date">
+          <mat-error>This field is mandatory!</mat-error>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
