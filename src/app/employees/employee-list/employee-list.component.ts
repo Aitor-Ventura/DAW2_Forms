@@ -2,11 +2,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { DepartmentService } from 'src/app/shared/department.service';
+import { DepartmentService } from '../../shared/department.service';
 import { EmployeeService } from '../../shared/employee.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { EmployeeComponent } from '../employee/employee.component';
-import { NotificationService } from 'src/app/shared/notification.service';
+import { NotificationService } from '../../shared/notification.service';
 
 @Component({
   selector: 'app-employee-list',

@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 import * as _ from 'lodash';
+import { DatePipe } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
 
-  constructor(public firebase: AngularFireDatabase) { }
+  constructor(public firebase: AngularFireDatabase, private datePipe: DatePipe) { }
 
   employeeList!: AngularFireList<any>;
 
@@ -20,7 +21,7 @@ export class EmployeeService {
     city: new FormControl(''),
     gender: new FormControl('1'),
     department: new FormControl(0),
-    hireDate: new FormControl('', Validators.required),
+    hireDate: new FormControl(''),
     isPermanent: new FormControl(false)
   });
 
@@ -48,10 +49,10 @@ export class EmployeeService {
       fullName: employee.fullName,
       email: employee.email,
       mobile: employee.mobile,
-      city: employee.mobile,
+      city: employee.city,
       gender: employee.gender,
       department: employee.department,
-      hireDate: employee.hireDate,
+      hireDate: employee.hireDate == "" ? "" : this.datePipe.transform(employee.hireDate, 'dd-MM-yyyy'),
       isPermanent: employee.isPermanent
     });
   }
@@ -61,10 +62,10 @@ export class EmployeeService {
       fullName: employee.fullName,
       email: employee.email,
       mobile: employee.mobile,
-      city: employee.mobile,
+      city: employee.city,
       gender: employee.gender,
       department: employee.department,
-      hireDate: employee.hireDate,
+      hireDate: employee.hireDate == "" ? "" : this.datePipe.transform(employee.hireDate, 'dd-MM-yyyy'),
       isPermanent: employee.isPermanent
     });
   }
