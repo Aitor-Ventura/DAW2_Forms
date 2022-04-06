@@ -1,27 +1,8 @@
 # FormsDaw
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+Para esta actividad se ha trabajado con servicios, Firebase como base de datos, y manejo en general de Angular Material. La parte más pesada ha sido sin duda la importanción constante de diferentes módulos, hasta llegó el punto que busqué todos los existentes e hice copia-pega de estos en el archivo correspondiente de los módulos de Angular Material. Irónicamente, esto hacía que el proyecto fuera demasiado pesado, así que acabé quitando algunos. Una solución que, sin embargo, de poco sirvió, y tuve que modificar los parámetros para que al buildear la aplicación, esta no diera error por el tamaño del proyecto.
 
-## Development server
+Se ha elaborado un formulario reactivo que implementa todas las funcionalidades CRUD: crear, modificar, y borrar un elemento. Seguí un tutorial online que explicara como trabajar con la base de datos Firebase e implementarla para que interactúe el usuario con ella. Sin embargo, el tutorial tenía la versión de Angular 9, por lo que tuve que "buscarme la vida" para que funcionase con la versión 13, puesto que ya tan avanzado en el proyecto no iba a empezar de cero y buscar otro. Ahí fue cuando la iluminación que viene denominada por: documentación de Angular y documentación de Firebase, demostró que existe un módulo de compatibilidad entre versiones.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para el despliegue se ha utilizado Vercel. Puede acceder a la aplicación en el siguiente enlace:
+> https://daw-2-forms.vercel.app/
